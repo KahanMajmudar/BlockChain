@@ -33,8 +33,8 @@
         
         address payable winner = players[random() % players.length];
         
-        players[uint(winner)].transfer(address(this).balance);
-        players = new address payable [](0);
+        winner.transfer(address(this).balance);
+        players = new address payable[](0);
     }
     
     modifier restricted() {
@@ -45,4 +45,4 @@
     }
 
      
- }
+}
