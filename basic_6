@@ -1,0 +1,11 @@
+pragma solidity ^0.5.0;
+
+var a = true;
+
+function a(uint x) returns (uint) {
+    
+    return x*2;
+}
+
+var f = a;
+f(22);
