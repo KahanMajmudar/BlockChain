@@ -1,0 +1,21 @@
+pragma solidity ^0.5.0;
+
+
+contract Mapping{
+    mapping(address => uint) public balances;
+
+    function update(uint newBalance) public {
+        balances[msg.sender] = newBalance;
+    }
+}
+
+contract MappingUser {
+    function f() public returns (uint) {
+        Mapping m = new Mapping();
+        m.update(100);
+        return m.balances(address(this));
+    }
+}
+
+
+
